@@ -1,4 +1,6 @@
-import '../../../config/themes/text_manager.dart';
+import 'package:new_structure/config/routes/route_manager.dart';
+import 'package:new_structure/generated/l10n.dart';
+
 import '../error_handler_service.dart';
 import '../failures.dart';
 import 'api_response_codes.dart';
@@ -6,9 +8,9 @@ import 'api_response_codes.dart';
 class ConnectionTimeOutErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.connectTimeout,
-      message: TextManager.connectTimeout,
+      message: S.of(RouteManager.currentContext).connectTimeout,
     );
   }
 }
@@ -16,9 +18,9 @@ class ConnectionTimeOutErrorHandler implements ErrorHandlerService {
 class SendTimeOutErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.sendTimeout,
-      message: TextManager.sendTimeout,
+      message: S.of(RouteManager.currentContext).sendTimeout,
     );
   }
 }
@@ -26,9 +28,9 @@ class SendTimeOutErrorHandler implements ErrorHandlerService {
 class ReceiveTimeOutErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.receiveTimeout,
-      message: TextManager.receiveTimeout,
+      message: S.of(RouteManager.currentContext).receiveTimeout,
     );
   }
 }
@@ -36,9 +38,9 @@ class ReceiveTimeOutErrorHandler implements ErrorHandlerService {
 class CancelErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.cancel,
-      message: TextManager.cancelMessage,
+      message: S.of(RouteManager.currentContext).cancelMessage,
     );
   }
 }
@@ -46,9 +48,9 @@ class CancelErrorHandler implements ErrorHandlerService {
 class BadCertificateErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.badRequest,
-      message: TextManager.badRequest,
+      message: S.of(RouteManager.currentContext).badRequest,
     );
   }
 }
@@ -56,9 +58,9 @@ class BadCertificateErrorHandler implements ErrorHandlerService {
 class UnknownErrorHandler implements ErrorHandlerService {
   @override
   Failure handle(Exception exception) {
-    return const ServerFailure(
+    return ServerFailure(
       statusCode: APIResponseCodes.unknown,
-      message: TextManager.unknown,
+      message: S.of(RouteManager.currentContext).unknown,
     );
   }
 }

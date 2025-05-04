@@ -4,4 +4,6 @@ sealed class ConfigState {}
 
 final class ConfigInitial extends ConfigState {}
 
-final class DarkModeChangedState extends ConfigState {}
+final class ThemeToggledState extends ConfigState {}
+
+final class LanguageToggledState extends ConfigState {}

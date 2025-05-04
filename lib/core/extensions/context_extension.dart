@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:new_structure/generated/l10n.dart';
 
 /// extension on context
 extension ContextExtension on BuildContext {
@@ -15,6 +16,12 @@ extension ContextExtension on BuildContext {
   // is Arabic
   bool get isArabic => Intl.getCurrentLocale() == "ar";
 
-  // local
-  String get locale => Intl.getCurrentLocale();
+  // language code
+  String get languageCode => Intl.getCurrentLocale();
+
+  // primary color
+  Color get primaryColor => Theme.of(this).colorScheme.primary;
+
+  // translate
+  S get tr => S.of(this);
 }

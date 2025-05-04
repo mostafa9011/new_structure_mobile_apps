@@ -1,6 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
 import 'package:new_structure/config/themes/text_style.dart';
 
 class CustomRowSpanText extends StatelessWidget {
@@ -16,16 +14,16 @@ class CustomRowSpanText extends StatelessWidget {
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
-          text: context.tr(text1),
+          text: text1,
           style: getRegularStyle(
             fontSize: 15,
-            color: ColorManager.primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
           children: [
             TextSpan(
-              text: context.tr(text2),
+              text: text2,
               style: getMediumStyle(
-                color: ColorManager.primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 15,
               ),
             ),

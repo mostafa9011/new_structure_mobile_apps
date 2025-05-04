@@ -21,5 +21,46 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "badRequest": MessageLookupByLibrary.simpleMessage(
+      "The request was invalid or malformed. Please verify your input and try again.",
+    ),
+    "cancelMessage": MessageLookupByLibrary.simpleMessage(
+      "The operation was canceled by the user.",
+    ),
+    "connectTimeout": MessageLookupByLibrary.simpleMessage(
+      "The connection to the server timed out. Please check your network connection and try again.",
+    ),
+    "connectionError": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while connecting to the server. Please try again later.",
+    ),
+    "forbidden": MessageLookupByLibrary.simpleMessage(
+      "Access is forbidden. You do not have permission to perform this action.",
+    ),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+    "notFound": MessageLookupByLibrary.simpleMessage(
+      "The requested resource was not found on the server.",
+    ),
+    "receiveTimeout": MessageLookupByLibrary.simpleMessage(
+      "Waiting for the server response took too long. Please try again later.",
+    ),
+    "sendTimeout": MessageLookupByLibrary.simpleMessage(
+      "Sending the request took too long. Please verify your connection and try again.",
+    ),
+    "serverError": MessageLookupByLibrary.simpleMessage(
+      "The server encountered an internal error. Please try again later.",
+    ),
+    "timeout": MessageLookupByLibrary.simpleMessage(
+      "The operation timed out. Please check your network and try again.",
+    ),
+    "unauthorized": MessageLookupByLibrary.simpleMessage(
+      "You are not authorized. Please log in and try again.",
+    ),
+    "unknown": MessageLookupByLibrary.simpleMessage(
+      "An unknown error occurred. Please try again later.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "An unexpected error occurred. Please try again later.",
+    ),
+  };
 }

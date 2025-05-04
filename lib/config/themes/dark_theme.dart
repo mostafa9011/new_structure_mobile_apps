@@ -8,7 +8,8 @@ ThemeData get darkTheme {
       primary: ColorManager._primary.defaultShade,
       onPrimary: ColorManager._black.defaultShade,
       secondary: ColorManager._secondary.defaultShade,
-      onSecondary: ColorManager._white.defaultShade,
+      // grey
+      onSecondary: ColorManager._grey.defaultShade,
       surface: ColorManager._black.defaultShade,
       onSurface: ColorManager._white.defaultShade,
       error: ColorManager._error.defaultShade,

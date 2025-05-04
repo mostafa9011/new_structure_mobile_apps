@@ -1,7 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
+
 import 'package:flutter/material.dart';
 import 'package:new_structure/core/utils/widgets/custom_alert_dialog.dart';
-import 'package:new_structure/config/themes/text_manager.dart';
+
+import '../../../generated/l10n.dart';
 
 void customLoadingDialog({
   required BuildContext context,
@@ -9,7 +10,7 @@ void customLoadingDialog({
 }) {
   showCustomAlertDialog(
     context: context,
-    title: text ?? TextManager.loading.tr(),
+    title: text ?? S.of(context).loading,
     content: const Center(child: CircularProgressIndicator()),
   );
 }

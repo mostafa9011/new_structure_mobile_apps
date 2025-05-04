@@ -7,6 +7,8 @@ import 'package:new_structure/core/api/api_consumer.dart';
 import 'package:new_structure/core/api/dio_consumer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'register_config_cubit.dart';
+
 final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
@@ -20,4 +22,6 @@ Future<void> initDependencies() async {
   // Shared preferences instance
   final sharedPref = await SharedPreferences.getInstance();
   sl.registerLazySingleton<SharedPreferences>(() => sharedPref);
+  // Register config cubit
+  registerConfigCubit();
 }

@@ -11,8 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initDependencies();
   await CacheHelper.init();
-  await ScreenUtil.ensureScreenSize();
   await FlutterSecureStorageHelper.init();
+  await ScreenUtil.ensureScreenSize();
   Bloc.observer = MyBlocObserver();
 
   runApp(

@@ -1,1 +1,17 @@
-{}
+{
+    "@@locale": "en",
+    "connectTimeout": "The connection to the server timed out. Please check your network connection and try again.",
+    "sendTimeout": "Sending the request took too long. Please verify your connection and try again.",
+    "receiveTimeout": "Waiting for the server response took too long. Please try again later.",
+    "cancelMessage": "The operation was canceled by the user.",
+    "badRequest": "The request was invalid or malformed. Please verify your input and try again.",
+    "unknown": "An unknown error occurred. Please try again later.",
+    "unauthorized": "You are not authorized. Please log in and try again.",
+    "forbidden": "Access is forbidden. You do not have permission to perform this action.",
+    "notFound": "The requested resource was not found on the server.",
+    "serverError": "The server encountered an internal error. Please try again later.",
+    "unknownError": "An unexpected error occurred. Please try again later.",
+    "timeout": "The operation timed out. Please check your network and try again.",
+    "loading": "Loading...",
+    "connectionError": "An error occurred while connecting to the server. Please try again later."
+}

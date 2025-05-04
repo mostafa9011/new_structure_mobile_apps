@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-
-import '../../../config/themes/text_manager.dart';
+import '../../../config/routes/route_manager.dart';
+import '../../../generated/l10n.dart';
 import '../error_handler_service.dart';
 import '../failures.dart';
 import 'api_response_codes.dart';
@@ -10,13 +10,14 @@ class BadResponseErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     final response = (exception as DioException).response?.data;
     final int? statusCode = response["code"];
-    final String statusMessage = response["message"] ?? TextManager.unknown;
+    final String statusMessage =
+        response["message"] ?? S.of(RouteManager.currentContext).unknown;
     // final Map<String, dynamic>? data = response["data"];
 
     // if there is no response
     if (statusCode == null) {
-      return const ServerFailure(
-        message: TextManager.unknown,
+      return ServerFailure(
+        message: S.of(RouteManager.currentContext).unknown,
         statusCode: APIResponseCodes.unknown,
       );
     }
@@ -30,9 +31,9 @@ class BadResponseErrorHandler implements ErrorHandlerService {
         );
 
       case APIResponseCodes.unprocessableEntity:
-        return const ServerFailure(
+        return ServerFailure(
           statusCode: APIResponseCodes.unprocessableEntity,
-          message: TextManager.unknown,
+          message: S.of(RouteManager.currentContext).unknown,
         );
 
       case APIResponseCodes.unauthorized:

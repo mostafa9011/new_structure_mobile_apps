@@ -1,12 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:new_structure/config/themes/assets_manager.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
+import 'package:new_structure/core/extensions/context_extension.dart';
 
-
-class ArrowBackIcon extends StatelessWidget { 
+class ArrowBackIcon extends StatelessWidget {
   final Function()? onBack;
   const ArrowBackIcon({super.key, this.onBack});
 
@@ -30,16 +28,16 @@ class ArrowBackIcon extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.r),
-            color: ColorManager.transparent,
+            color: Colors.transparent,
             border: Border.all(
-              color: ColorManager.grey,
+              color: Theme.of(context).colorScheme.onSecondary,
               width: 1.w,
             ),
           ),
           child: Transform(
             alignment: Alignment.center,
-            transform:
-                Matrix4.rotationY(context.locale.languageCode != 'ar' ? 3.14 : 0),
+            transform: Matrix4.rotationY(
+                context.languageCode != 'ar' ? 3.14 : 0),
             child: SvgPicture.asset(
               AssetsManager.backIcon,
               width: 25.w,

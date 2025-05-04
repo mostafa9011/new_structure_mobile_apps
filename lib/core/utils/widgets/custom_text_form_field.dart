@@ -1,10 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/utils/widgets/custom_text.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
 import 'package:new_structure/config/themes/text_style.dart';
+import 'package:new_structure/core/utils/widgets/custom_text.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? label;
@@ -17,20 +15,20 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final bool suffix;
   final bool isSuffixWidget;
-  final Color textColor;
+  final Color? textColor;
   final Widget? suffixWidget;
   final String? Function(String?)? validator;
   final Function(String?)? onchangeFun;
   final TextEditingController? controller;
   final TextInputType keyboardType;
   final bool hasBorder;
-  final Color fillColor;
+  final Color? fillColor;
   final int maxLength;
   final double fontSize;
   final bool isEn;
   final Function? onEditingComplete;
-  final Color colorBorder;
-  final Color hintColor;
+  final Color? colorBorder;
+  final Color? hintColor;
   final Function? passwordVisibility;
   final int maxLines;
   final bool enabled;
@@ -41,8 +39,8 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     this.label,
     this.textHint,
-    this.textColor = ColorManager.primaryColor,
-    this.hintColor = ColorManager.primaryColor,
+    this.textColor,
+    this.hintColor,
     this.maxLines = 4,
     this.onchangeFun,
     this.passwordVisibility,
@@ -59,9 +57,9 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     this.onEditingComplete,
     this.enabled = true,
-    this.colorBorder = ColorManager.lightGrey,
+    this.colorBorder,
     this.hasBorder = true,
-    this.fillColor = ColorManager.white,
+    this.fillColor,
     this.maxLength = 10000,
     this.fontSize = 16,
     this.isEn = false,
@@ -72,7 +70,7 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String updatedHintText = textHint == null ? "" : context.tr(textHint!);
+    String updatedHintText = textHint == null ? "" : textHint!;
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
@@ -89,7 +87,7 @@ class CustomTextFormField extends StatelessWidget {
           enabled: enabled,
           keyboardType: keyboardType,
           cursorHeight: 25.h,
-          cursorColor: ColorManager.black,
+          cursorColor: Theme.of(context).colorScheme.onSurface,
           // maxLines: maxLines,
           // minLines: 1,
           style: getMediumStyle(
@@ -117,7 +115,7 @@ class CustomTextFormField extends StatelessWidget {
                     text: label!,
                     style: getRegularStyle(
                       fontSize: 16,
-                      color: ColorManager.primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     textAlign: TextAlign.start,
                   ),
@@ -130,7 +128,7 @@ class CustomTextFormField extends StatelessWidget {
             prefixIcon: prefixIcon,
             suffixStyle: getRegularStyle(
               fontSize: 14,
-              color: ColorManager.primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
           // control the number of digits in the text field

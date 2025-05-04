@@ -8,6 +8,7 @@ ThemeData get lightTheme {
       primary: ColorManager._primary.defaultShade,
       onPrimary: ColorManager._white.defaultShade,
       secondary: ColorManager._secondary.defaultShade,
+      // grey
       onSecondary: ColorManager._grey.defaultShade,
       surface: ColorManager._white.defaultShade,
       onSurface: ColorManager._black.defaultShade,

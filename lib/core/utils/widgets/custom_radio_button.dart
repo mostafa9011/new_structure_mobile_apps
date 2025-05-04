@@ -1,6 +1,5 @@
 import 'package:flutter/Material.dart';
-import 'package:new_structure/core/utils/responsive_methods.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
+import 'package:new_structure/core/extensions/context_extension.dart';
 
 class CustomRadioButton extends StatelessWidget {
   final String value;
@@ -16,12 +15,12 @@ class CustomRadioButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
-      scale: isTablet(context) ? 2 : 1.5,
+      scale: context.isTablet ? 2 : 1.5,
       child: Radio(
         value: value,
         groupValue: groupValue,
         onChanged: onChanged,
-        activeColor: ColorManager.primaryColor,
+        activeColor: Theme.of(context).colorScheme.primary,
       ),
     );
   }

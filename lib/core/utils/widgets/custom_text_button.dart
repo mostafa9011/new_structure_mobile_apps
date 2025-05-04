@@ -1,5 +1,4 @@
 import 'package:flutter/Material.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
 import 'package:new_structure/config/themes/text_style.dart';
 
 class CustomTextButton extends StatelessWidget {
@@ -27,7 +26,7 @@ class CustomTextButton extends StatelessWidget {
       child: Text(
         title,
         style: getBoldStyle(
-          color: color ?? ColorManager.primaryColor,
+          color: color ?? Theme.of(context).colorScheme.primary,
           fontSize: fontSize ?? 15,
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/Material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/utils/responsive_methods.dart';
-import 'package:new_structure/config/themes/color_manager.dart';
+import 'package:new_structure/core/extensions/context_extension.dart';
+
 
 class Dots extends StatelessWidget {
   final int numberOfDots;
@@ -24,11 +24,11 @@ class Dots extends StatelessWidget {
           height: 10.h,
           width: index == currentIndex
               ? (50.w)
-              : (isTablet(context) ? 30.w : 20.w),
+              : (context.isTablet ? 30.w : 20.w),
           decoration: BoxDecoration(
             color: index == currentIndex
-                ? ColorManager.primaryColor
-                : ColorManager.grey,
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).colorScheme.onSecondary,
             borderRadius: BorderRadius.circular(5.r),
           ),
         ),

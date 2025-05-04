@@ -1,8 +1,8 @@
+import 'package:dio/dio.dart';
+
 import 'api/dio_bad_response_error_handler.dart';
 import 'api/dio_error_handlers.dart';
 import 'error_handler_service.dart';
-import 'package:dio/dio.dart';
-
 import 'firebase/firebase_general_error_handler.dart';
 
 // This class is used as abstract factory
@@ -32,8 +32,6 @@ class DioErrorHandlerFactory implements ErrorHandlerFactory {
       case DioExceptionType.connectionError:
         return ConnectionTimeOutErrorHandler();
       case DioExceptionType.unknown:
-        return UnknownErrorHandler();
-      default:
         return UnknownErrorHandler();
     }
   }

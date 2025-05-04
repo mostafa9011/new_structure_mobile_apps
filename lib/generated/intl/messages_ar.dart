@@ -21,5 +21,46 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "badRequest": MessageLookupByLibrary.simpleMessage(
+      "كانت الطلبية غير صالحة أو مشوّهة. يرجى التحقق من البيانات والمحاولة مرة أخرى.",
+    ),
+    "cancelMessage": MessageLookupByLibrary.simpleMessage(
+      "تم إلغاء العملية بواسطة المستخدم.",
+    ),
+    "connectTimeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة الاتصال بالخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.",
+    ),
+    "connectionError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطاء في الاتصال بالخادم. يرجى المحاولة لاحقًا.",
+    ),
+    "forbidden": MessageLookupByLibrary.simpleMessage(
+      "الوصول ممنوع. لا تملك إذنًا للقيام بهذا الإجراء.",
+    ),
+    "loading": MessageLookupByLibrary.simpleMessage("جار التحميل..."),
+    "notFound": MessageLookupByLibrary.simpleMessage(
+      "المورد المطلوب غير موجود على الخادم.",
+    ),
+    "receiveTimeout": MessageLookupByLibrary.simpleMessage(
+      "استغرق انتظار استجابة الخادم وقتًا طويلاً. يرجى المحاولة لاحقًا.",
+    ),
+    "sendTimeout": MessageLookupByLibrary.simpleMessage(
+      "استغرق إرسال الطلب وقتًا طويلاً. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+    ),
+    "serverError": MessageLookupByLibrary.simpleMessage(
+      "واجه الخادم خطأ داخلي. يرجى المحاولة لاحقًا.",
+    ),
+    "timeout": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة العملية. يرجى التحقق من الشبكة والمحاولة مرة أخرى.",
+    ),
+    "unauthorized": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك صلاحية. يرجى تسجيل الدخول والمحاولة مرة أخرى.",
+    ),
+    "unknown": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير معروف. يرجى المحاولة لاحقًا.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
+    ),
+  };
 }
