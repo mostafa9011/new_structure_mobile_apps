@@ -5,7 +5,7 @@ import 'page_name.dart';
 
 class RouteManager {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-  static BuildContext? get ctx => navigatorKey.currentContext;
+  static late BuildContext currentContext;
 
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {

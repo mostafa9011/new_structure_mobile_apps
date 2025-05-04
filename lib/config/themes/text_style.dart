@@ -8,12 +8,14 @@ TextStyle _getTextStyle({
   required FontWeight fontWeight,
   Color? color,
   String? fontFamily,
+  double? height,
 }) {
   return TextStyle(
     color: color,
     fontSize: fontSize.sp,
     fontFamily: fontFamily,
     fontWeight: fontWeight,
+    height: height,
   );
 }
 
@@ -22,12 +24,14 @@ TextStyle getLightStyle({
   Color? color,
   String? fontFamily,
   double fontSize = 12,
+  double? height,
 }) {
   return _getTextStyle(
     fontSize: fontSize,
     color: color,
     fontFamily: fontFamily,
     fontWeight: FontWeight.w300,
+    height: height,
   );
 }
 
@@ -36,12 +40,14 @@ TextStyle getRegularStyle({
   Color? color,
   String? fontFamily,
   double fontSize = 14,
+  double? height,
 }) {
   return _getTextStyle(
     fontSize: fontSize,
     color: color,
     fontFamily: fontFamily,
     fontWeight: FontWeight.w400,
+    height: height,
   );
 }
 
@@ -50,12 +56,30 @@ TextStyle getMediumStyle({
   Color? color,
   String? fontFamily,
   double fontSize = 16,
+  double? height,
 }) {
   return _getTextStyle(
     fontSize: fontSize,
     color: color,
     fontFamily: fontFamily,
     fontWeight: FontWeight.w500,
+    height: height,
+  );
+}
+
+// semi bold style
+TextStyle getSemiBoldStyle({
+  Color? color,
+  String? fontFamily,
+  double fontSize = 18,
+  double? height,
+}) {
+  return _getTextStyle(
+    fontSize: fontSize,
+    color: color,
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.w600,
+    height: height,
   );
 }
 
@@ -64,11 +88,13 @@ TextStyle getBoldStyle({
   Color? color,
   String? fontFamily,
   double fontSize = 18,
+  double? height,
 }) {
   return _getTextStyle(
     fontSize: fontSize,
     color: color,
     fontFamily: fontFamily,
     fontWeight: FontWeight.w700,
+    height: height,
   );
 }

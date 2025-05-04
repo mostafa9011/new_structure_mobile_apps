@@ -1,4 +1,4 @@
-import 'package:new_structure/core/utils/di.dart';
+import 'package:new_structure/core/utils/dependency_injection/di.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // CacheHelper That's Connect and Talk to local database.
