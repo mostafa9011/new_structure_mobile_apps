@@ -2,15 +2,9 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:new_structure/config/routes/page_name.dart';
-import 'package:new_structure/config/routes/route_manager.dart';
 import 'package:new_structure/core/api/api_consumer.dart';
 import 'package:new_structure/core/api/end_points.dart';
-import 'package:new_structure/core/errors/api/api_response_codes.dart';
-import 'package:new_structure/core/helpers/cache_helper.dart';
-import 'package:new_structure/core/utils/functions/kprint.dart';
-import 'package:new_structure/core/utils/keys_manager.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'interceptor_list.dart';
 
 /// This class is responsible for handling api calls using Dio package
 class DioConsumer implements ApiConsumer {
@@ -27,6 +21,7 @@ class DioConsumer implements ApiConsumer {
       },
     );
 
+    // Base options
     dio.options = BaseOptions(
       baseUrl: EndPoints.baseUrl,
       receiveDataWhenStatusError: true,
@@ -38,50 +33,8 @@ class DioConsumer implements ApiConsumer {
       },
     );
 
-    dio.interceptors.addAll(
-      [
-        // For logging request & response
-        PrettyDioLogger(
-          requestHeader: true,
-          requestBody: true,
-        ),
-
-        InterceptorsWrapper(
-          onRequest: (options, handler) async {
-            // For token handling
-            final token = CacheHelper.getStringData(KeysManager.token);
-
-            if (token != null) {
-              // Set the Authorization header with the cached access token
-              options.headers['Authorization'] = 'Bearer $token';
-            }
-
-            return handler.next(options);
-          },
-          // onResponse: (response, handler) {
-          //   return handler.next(response);
-          // },
-          onError: (error, handler) {
-            kprint("Error from DioConsumer: ${error.message}");
-
-            if (error.response?.statusCode == APIResponseCodes.unauthorized ||
-                error.response?.statusCode == APIResponseCodes.forbidden) {
-              /// User is unauthorized or forbidden
-
-              // Clear cashed data
-              CacheHelper.removeData(key: KeysManager.token);
-              // Navigate to login page
-              RouteManager.navigatorKey.currentState!.pushNamedAndRemoveUntil(
-                PageName.login,
-                (route) => false,
-              );
-            } else {
-              return handler.next(error);
-            }
-          },
-        ),
-      ],
-    );
+    // Add interceptors
+    dio.interceptors.addAll(dioInterceptors);
   }
 
   @override
