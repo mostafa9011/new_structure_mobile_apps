@@ -6,7 +6,7 @@ ThemeData get lightTheme {
     colorScheme: ColorScheme(
       brightness: Brightness.light,
       primary: ColorManager._primary.defaultShade,
-      onPrimary: ColorManager._white.defaultShade,
+      onPrimary: ColorManager._black.defaultShade,
       secondary: ColorManager._secondary.defaultShade,
       // grey
       onSecondary: ColorManager._grey.defaultShade,

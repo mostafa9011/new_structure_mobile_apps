@@ -13,5 +13,7 @@
     "unknownError": "An unexpected error occurred. Please try again later.",
     "timeout": "The operation timed out. Please check your network and try again.",
     "loading": "Loading...",
-    "connectionError": "An error occurred while connecting to the server. Please try again later."
+    "connectionError": "An error occurred while connecting to the server. Please try again later.",
+    "changeLanguage": "Change Language",
+    "changeTheme": "Change Theme"
 }

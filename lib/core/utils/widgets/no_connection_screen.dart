@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_structure/config/themes/assets_manager.dart';
 import 'package:new_structure/config/themes/text_style.dart';
 import 'package:new_structure/core/extensions/context_extension.dart';
-import 'package:new_structure/core/utils/widgets/custom_text.dart';
 
 class NoConnectionScreen extends StatelessWidget {
   final Function? onRetry;
@@ -27,8 +26,8 @@ class NoConnectionScreen extends StatelessWidget {
               BlendMode.srcIn,
             ),
           ),
-          CustomText(
-            text: context.tr.connectionError,
+          Text(
+            context.tr.connectionError,
             style: getBoldStyle(fontSize: 22.sp),
           ),
         ],

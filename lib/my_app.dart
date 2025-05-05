@@ -15,9 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // init current context
-    RouteManager.currentContext = context;
-
     return BlocProvider(
       create: (context) => sl<ConfigCubit>(),
       child: Builder(

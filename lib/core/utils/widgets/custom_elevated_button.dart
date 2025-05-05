@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_structure/config/themes/text_style.dart';
 import 'package:new_structure/core/extensions/context_extension.dart';
-import 'package:new_structure/core/utils/widgets/custom_text.dart';
 import 'package:new_structure/core/utils/widgets/spinket_loader.dart';
 
 class CustomElevatedButton extends StatelessWidget {
@@ -51,7 +50,7 @@ class CustomElevatedButton extends StatelessWidget {
       height: context.isTablet ? 65.h : height.h,
       width: width == 1 ? width.sw : width.w,
       child: ElevatedButton(
-        style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
+        style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
               backgroundColor: WidgetStateProperty.all<Color>(
                 isDisabled
                     ? Theme.of(context).colorScheme.onSecondary
@@ -65,8 +64,8 @@ class CustomElevatedButton extends StatelessWidget {
               ),
             ),
         onPressed: isDisabled ? null : onPressed,
-        child: CustomText(
-          text: text,
+        child: Text(
+           text,
           style: style ??
               getBoldStyle(
                 fontSize: context.isTablet ? 8.sp : size.sp,

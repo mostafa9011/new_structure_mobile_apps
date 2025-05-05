@@ -189,6 +189,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Change Language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change Language',
+      name: 'changeLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Theme`
+  String get changeTheme {
+    return Intl.message(
+      'Change Theme',
+      name: 'changeTheme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

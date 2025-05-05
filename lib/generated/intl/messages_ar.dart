@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelMessage": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء العملية بواسطة المستخدم.",
     ),
+    "changeLanguage": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+    "changeTheme": MessageLookupByLibrary.simpleMessage("تغيير الثيم"),
     "connectTimeout": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال بالخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.",
     ),

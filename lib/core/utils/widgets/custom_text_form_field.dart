@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_structure/config/themes/text_style.dart';
-import 'package:new_structure/core/utils/widgets/custom_text.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? label;
@@ -111,8 +110,8 @@ class CustomTextFormField extends StatelessWidget {
             fillColor: fillColor,
             label: label == null
                 ? null
-                : CustomText(
-                    text: label!,
+                : Text(
+                    label!,
                     style: getRegularStyle(
                       fontSize: 16,
                       color: Theme.of(context).colorScheme.primary,

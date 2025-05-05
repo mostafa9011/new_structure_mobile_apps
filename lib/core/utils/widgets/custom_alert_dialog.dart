@@ -1,6 +1,5 @@
 import 'package:flutter/Material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/utils/widgets/custom_text.dart';
 import 'package:new_structure/config/themes/text_style.dart';
 
 void showCustomAlertDialog({
@@ -20,8 +19,8 @@ void showCustomAlertDialog({
         surfaceTintColor: Theme.of(context).scaffoldBackgroundColor,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Center(
-          child: CustomText(
-            text: title,
+          child: Text(
+            title,
             style: getBoldStyle(fontSize: 20),
           ),
         ),

@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancelMessage": MessageLookupByLibrary.simpleMessage(
       "The operation was canceled by the user.",
     ),
+    "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
+    "changeTheme": MessageLookupByLibrary.simpleMessage("Change Theme"),
     "connectTimeout": MessageLookupByLibrary.simpleMessage(
       "The connection to the server timed out. Please check your network connection and try again.",
     ),
