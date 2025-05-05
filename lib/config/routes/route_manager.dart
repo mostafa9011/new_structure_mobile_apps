@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_structure/features/splash/presentation/pages/splash_view.dart';
 import 'package:page_transition/page_transition.dart';
+import '../../features/splash/presentation/screens/splash_screen.dart';
 import 'page_name.dart';
 
 class RouteManager {
@@ -11,7 +11,7 @@ class RouteManager {
     switch (routeSettings.name) {
       case PageName.splash:
         return _getPageTransition(
-          const SplashView(),
+          const SplashScreen(),
           settings: routeSettings,
         );
 
