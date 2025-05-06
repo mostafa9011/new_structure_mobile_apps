@@ -12,7 +12,9 @@ ThemeData get darkTheme {
       onSecondary: ColorManager._grey.defaultShade,
       surface: ColorManager._black.defaultShade,
       onSurface: ColorManager._white.defaultShade,
+      tertiary: ColorManager._success.defaultShade,
       error: ColorManager._error.defaultShade,
+      onTertiary: ColorManager._warning.defaultShade,
       onError: ColorManager._white.defaultShade,
     ),
   );

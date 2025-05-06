@@ -50,7 +50,7 @@ class CustomElevatedButton extends StatelessWidget {
       height: context.isTablet ? 65.h : height.h,
       width: width == 1 ? width.sw : width.w,
       child: ElevatedButton(
-        style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+        style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
               backgroundColor: WidgetStateProperty.all<Color>(
                 isDisabled
                     ? Theme.of(context).colorScheme.onSecondary
@@ -65,7 +65,7 @@ class CustomElevatedButton extends StatelessWidget {
             ),
         onPressed: isDisabled ? null : onPressed,
         child: Text(
-           text,
+          text,
           style: style ??
               getBoldStyle(
                 fontSize: context.isTablet ? 8.sp : size.sp,

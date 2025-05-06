@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "am": MessageLookupByLibrary.simpleMessage("AM"),
     "badRequest": MessageLookupByLibrary.simpleMessage(
       "The request was invalid or malformed. Please verify your input and try again.",
     ),
@@ -36,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectionError": MessageLookupByLibrary.simpleMessage(
       "An error occurred while connecting to the server. Please try again later.",
     ),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "forbidden": MessageLookupByLibrary.simpleMessage(
       "Access is forbidden. You do not have permission to perform this action.",
     ),
@@ -43,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "notFound": MessageLookupByLibrary.simpleMessage(
       "The requested resource was not found on the server.",
     ),
+    "pm": MessageLookupByLibrary.simpleMessage("PM"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(
       "Waiting for the server response took too long. Please try again later.",
     ),

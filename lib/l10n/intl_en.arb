@@ -15,5 +15,8 @@
     "loading": "Loading...",
     "connectionError": "An error occurred while connecting to the server. Please try again later.",
     "changeLanguage": "Change Language",
-    "changeTheme": "Change Theme"
+    "changeTheme": "Change Theme",
+    "pm": "PM",
+    "am": "AM",
+    "fieldRequired": "This field is required"
 }

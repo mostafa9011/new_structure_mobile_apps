@@ -12,6 +12,8 @@ ThemeData get lightTheme {
       onSecondary: ColorManager._grey.defaultShade,
       surface: ColorManager._white.defaultShade,
       onSurface: ColorManager._black.defaultShade,
+      tertiary: ColorManager._success.defaultShade,
+      onTertiary: ColorManager._warning.defaultShade,
       error: ColorManager._error.defaultShade,
       onError: ColorManager._white.defaultShade,
     ),

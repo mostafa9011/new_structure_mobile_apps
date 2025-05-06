@@ -209,6 +209,26 @@ class S {
       args: [],
     );
   }
+
+  /// `PM`
+  String get pm {
+    return Intl.message('PM', name: 'pm', desc: '', args: []);
+  }
+
+  /// `AM`
+  String get am {
+    return Intl.message('AM', name: 'am', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get fieldRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'fieldRequired',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "am": MessageLookupByLibrary.simpleMessage("صباحا"),
     "badRequest": MessageLookupByLibrary.simpleMessage(
       "كانت الطلبية غير صالحة أو مشوّهة. يرجى التحقق من البيانات والمحاولة مرة أخرى.",
     ),
@@ -36,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectionError": MessageLookupByLibrary.simpleMessage(
       "حدث خطاء في الاتصال بالخادم. يرجى المحاولة لاحقًا.",
     ),
+    "fieldRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "forbidden": MessageLookupByLibrary.simpleMessage(
       "الوصول ممنوع. لا تملك إذنًا للقيام بهذا الإجراء.",
     ),
@@ -43,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "notFound": MessageLookupByLibrary.simpleMessage(
       "المورد المطلوب غير موجود على الخادم.",
     ),
+    "pm": MessageLookupByLibrary.simpleMessage("مساءا"),
     "receiveTimeout": MessageLookupByLibrary.simpleMessage(
       "استغرق انتظار استجابة الخادم وقتًا طويلاً. يرجى المحاولة لاحقًا.",
     ),

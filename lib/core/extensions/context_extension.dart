@@ -24,4 +24,7 @@ extension ContextExtension on BuildContext {
 
   // translate
   S get tr => S.of(this);
+
+  // color scheme
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
 }
