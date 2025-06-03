@@ -1,5 +1,5 @@
 import 'package:new_structure/config/routes/route_manager.dart';
-import 'package:new_structure/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../error_handler_service.dart';
 import '../failures.dart';
@@ -10,7 +10,7 @@ class ConnectionTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.connectTimeout,
-      message: S.of(RouteManager.currentContext).connectTimeout,
+      message: AppLocalizations.of(RouteManager.currentContext)!.connectTimeout,
     );
   }
 }
@@ -20,7 +20,7 @@ class SendTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.sendTimeout,
-      message: S.of(RouteManager.currentContext).sendTimeout,
+      message: AppLocalizations.of(RouteManager.currentContext)!.sendTimeout,
     );
   }
 }
@@ -30,7 +30,7 @@ class ReceiveTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.receiveTimeout,
-      message: S.of(RouteManager.currentContext).receiveTimeout,
+      message: AppLocalizations.of(RouteManager.currentContext)!.receiveTimeout,
     );
   }
 }
@@ -40,7 +40,7 @@ class CancelErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.cancel,
-      message: S.of(RouteManager.currentContext).cancelMessage,
+      message: AppLocalizations.of(RouteManager.currentContext)!.cancelMessage,
     );
   }
 }
@@ -50,7 +50,7 @@ class BadCertificateErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.badRequest,
-      message: S.of(RouteManager.currentContext).badRequest,
+      message: AppLocalizations.of(RouteManager.currentContext)!.badRequest,
     );
   }
 }
@@ -60,7 +60,7 @@ class UnknownErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.unknown,
-      message: S.of(RouteManager.currentContext).unknown,
+      message: AppLocalizations.of(RouteManager.currentContext)!.unknown,
     );
   }
 }

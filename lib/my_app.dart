@@ -5,10 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_structure/config/config_cubit/config_cubit.dart';
 import 'package:new_structure/config/themes/color_manager.dart';
 import 'package:new_structure/core/utils/dependency_injection/di.dart';
-
 import 'config/routes/page_name.dart';
 import 'config/routes/route_manager.dart';
-import 'generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,12 +26,12 @@ class MyApp extends StatelessWidget {
               builder: (context, state) {
                 return MaterialApp(
                   localizationsDelegates: const [
-                    S.delegate,
+                    AppLocalizations.delegate,
                     GlobalMaterialLocalizations.delegate,
                     GlobalWidgetsLocalizations.delegate,
                     GlobalCupertinoLocalizations.delegate,
                   ],
-                  supportedLocales: S.delegate.supportedLocales,
+                  supportedLocales: AppLocalizations.supportedLocales,
                   locale: ConfigCubit.locale,
                   debugShowCheckedModeBanner: false,
                   theme: lightTheme,

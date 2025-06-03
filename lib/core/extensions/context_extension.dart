@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:new_structure/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// extension on context
 extension ContextExtension on BuildContext {
@@ -23,7 +23,7 @@ extension ContextExtension on BuildContext {
   Color get primaryColor => Theme.of(this).colorScheme.primary;
 
   // translate
-  S get tr => S.of(this);
+  AppLocalizations get tr => AppLocalizations.of(this)!;
 
   // color scheme
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
