@@ -6,11 +6,11 @@ class FlutterSecureStorageHelper {
     storage = const FlutterSecureStorage(
         aOptions: AndroidOptions(encryptedSharedPreferences: true),
         iOptions:
-            IOSOptions(accessibility: KeychainAccessibility.first_unlock));
+            IOSOptions(accessibility: KeychainAccessibility.first_unlock),);
   }
 
   static Future<void> setData(
-      {required String key, required String value}) async {
+      {required String key, required String value,}) async {
     await storage.write(key: key, value: value);
   }
 
@@ -19,7 +19,7 @@ class FlutterSecureStorageHelper {
   }
 
   static Future<bool?> getBoolData({required String key}) async {
-    String? value = await storage.read(key: key);
+    final String? value = await storage.read(key: key);
     if (value != null) {
       return value.toLowerCase() == 'true';
     }
@@ -27,7 +27,7 @@ class FlutterSecureStorageHelper {
   }
 
   static Future<int?> getIntData({required String key}) async {
-    String? value = await storage.read(key: key);
+    final String? value = await storage.read(key: key);
     if (value != null) {
       return int.parse(value);
     }
