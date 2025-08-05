@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:intl/intl.dart';
+
+import '../utils/responsive.dart';
 
 /// extension on context
 extension ContextExtension on BuildContext {
-  // screen size
-  Size get size => MediaQuery.of(this).size;
+  bool get isTablet => Responsive.isTablet;
 
-  // is tablet
-  bool get isTablet => size.width >= 600 && size.width <= 900;
+  bool get isMobile => !Responsive.isTablet;
 
-  // is mobile
-  bool get isMobile => size.width < 600;
+  bool get isArabic => AppLocalizations.of(this)?.localeName == 'ar';
 
-  // is Arabic
-  bool get isArabic => Intl.getCurrentLocale() == "ar";
+  bool get isEnglish => AppLocalizations.of(this)?.localeName == 'en';
 
-  // language code
-  String get languageCode => Intl.getCurrentLocale();
+  String get languageCode => AppLocalizations.of(this)?.localeName ?? 'en';
 
-  // primary color
   Color get primaryColor => Theme.of(this).colorScheme.primary;
 
-  // translate
   AppLocalizations get tr => AppLocalizations.of(this)!;
 
-  // color scheme
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
+
+  Color get scaffoldBackgroundColor => Theme.of(this).scaffoldBackgroundColor;
+
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
+
+  String formatDateTime({
+    required String date,
+    required String format,
+  }) =>
+      DateFormat(format, languageCode).format(DateTime.parse(date));
 }

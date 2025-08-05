@@ -119,5 +119,13 @@
     "invalidFileType": "نوع ملف غير صالح",
     "isRequired": "مطلوب",
     "edit": "تعديل",
-    "view": "عرض"
+    "view": "عرض",
+    "success": "نجاح",
+    "invalidPhoneNumber": "رقم الهاتف غير صالح",
+    "phoneRequired": "رقم الهاتف مطلوب",
+    "phoneNumberHint": "ادخل رقم هاتفك",
+    "enterOldPasswordHint": "ادخل كلمة المرور القديمة",
+    "enterNewPasswordHint": "ادخل كلمة المرور الجديدة",
+    "enterConfirmPasswordHint": "ادخل تاءكيد كلمة المرور",
+    "passwordRequired": "كلمة المرور مطلوبة"
 }

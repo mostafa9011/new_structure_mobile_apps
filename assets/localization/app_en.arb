@@ -119,5 +119,13 @@
     "invalidFileType": "Invalid File Type",
     "isRequired": "is required",
     "edit": "Edit",
-    "view": "View"
+    "view": "View",
+    "success": "Success",
+    "invalidPhoneNumber": "Invalid Phone Number",
+    "phoneRequired": "Phone Number is required",
+    "phoneNumberHint": "Enter your phone number",
+    "enterOldPasswordHint": "Enter your old password",
+    "enterNewPasswordHint": "Enter your new password",
+    "enterConfirmPasswordHint": "Enter your confirm password",
+    "passwordRequired": "Password is required"
 }

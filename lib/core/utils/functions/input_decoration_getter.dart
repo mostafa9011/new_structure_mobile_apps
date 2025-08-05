@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
 
 import '../../../config/themes/text_style.dart';
+import '../../extensions/context_extension.dart';
 
 mixin InputDecorationGetter {
   InputDecoration getInputDecoration({
@@ -24,18 +24,19 @@ mixin InputDecorationGetter {
       focusColor: context.colorScheme.primary,
       hoverColor: context.colorScheme.primary,
       errorStyle: getRegularStyle(
-        fontSize: 14,
         color: context.colorScheme.error,
       ),
       prefixIcon: prefixIcon == null
           ? null
           : Padding(
               padding: EdgeInsetsDirectional.only(
-                  start: horizontalPadding.w,
-                  end: prefixIconEndPadding.w,
-                  top: verticalPadding.h,
-                  bottom: verticalPadding.h),
-              child: prefixIcon),
+                start: horizontalPadding.w,
+                end: prefixIconEndPadding.w,
+                top: verticalPadding.h,
+                bottom: verticalPadding.h,
+              ),
+              child: prefixIcon,
+            ),
       prefixIconConstraints: BoxConstraints(
         maxHeight: 70.h,
         maxWidth: 140.w,
@@ -66,13 +67,17 @@ mixin InputDecorationGetter {
       fillColor: context.colorScheme.surface,
       filled: true,
       border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius.r),
-          borderSide:
-              BorderSide(width: 1.w, color: context.colorScheme.onSecondary)),
+        borderRadius: BorderRadius.circular(borderRadius.r),
+        borderSide:
+            BorderSide(width: 1.w, color: context.colorScheme.onSecondary),
+      ),
       focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(borderRadius.r),
-          borderSide: BorderSide(
-              width: 1.w, color: borderColor ?? context.colorScheme.primary)),
+        borderRadius: BorderRadius.circular(borderRadius.r),
+        borderSide: BorderSide(
+          width: 1.w,
+          color: borderColor ?? context.colorScheme.primary,
+        ),
+      ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(borderRadius.r),
         borderSide: BorderSide(

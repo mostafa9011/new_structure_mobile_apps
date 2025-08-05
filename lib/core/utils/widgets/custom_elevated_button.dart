@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/config/themes/text_style.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
-import 'package:new_structure/core/utils/widgets/spinket_loader.dart';
+
+import '../../../config/themes/text_style.dart';
+import '../../extensions/context_extension.dart';
+import 'spinket_loader.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -23,8 +24,9 @@ class CustomElevatedButton extends StatelessWidget {
   // ColorScheme colorTheme = Theme.of(RouteManager.currentContext).colorScheme;
 
   const CustomElevatedButton({
-    super.key,
     required this.onPressed,
+    required this.text,
+    super.key,
     this.style,
     this.buttonAlignment = Alignment.center,
     this.width = 1,
@@ -32,7 +34,6 @@ class CustomElevatedButton extends StatelessWidget {
     this.height = 60,
     this.borderRadius = 16,
     this.borderColor,
-    required this.text,
     this.textColor,
     this.backgroundColor,
     this.size = 16,

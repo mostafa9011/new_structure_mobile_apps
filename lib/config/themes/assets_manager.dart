@@ -10,6 +10,7 @@ class AssetsManager {
   /// SVG
   static const String backIcon = '${_svgPath}back_icon.svg';
   static const String noConnection = '${_svgPath}no_connection.svg';
+  static const String arrowDown = '${_svgPath}arrow_down.svg';
 
   /// Icons
 

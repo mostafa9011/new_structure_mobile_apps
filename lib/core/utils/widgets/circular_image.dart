@@ -4,18 +4,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:new_structure/core/utils/functions/kprint.dart';
 
 import '../enums/image_type.dart';
+import '../functions/kprint.dart';
 
 class CircularImage extends StatelessWidget {
   final double radius;
   final String image;
   final ImageType imageType;
   const CircularImage({
-    super.key,
-    required this.radius,
-    required this.image,
+    required this.radius, required this.image, super.key,
     this.imageType = ImageType.network,
   });
 

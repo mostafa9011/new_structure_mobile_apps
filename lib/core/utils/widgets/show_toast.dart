@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/config/routes/route_manager.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
 
+import '../../../config/routes/route_manager.dart';
 import '../../../config/themes/text_style.dart';
+import '../../extensions/context_extension.dart';
 
 enum ToastType { success, error, warning }
 
 OverlayEntry? _currentToast;
 
-void showToast(
-  BuildContext context, {
-  String message = "This is a toast message",
-  ToastType type = ToastType.success,
+void showToast({
+  required BuildContext context,
+  required ToastType type,
+  required String message,
 }) {
   final overlayState = Overlay.of(context, rootOverlay: true);
 
@@ -142,7 +142,6 @@ class _ToastWidgetState extends State<_ToastWidget>
                       color: widget.type == ToastType.success
                           ? context.colorScheme.tertiary
                           : context.colorScheme.error,
-                      fontSize: 16,
                     ),
                   ),
                 ),
