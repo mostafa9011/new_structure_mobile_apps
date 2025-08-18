@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../config/routes/route_manager.dart';
-import '../../../../config/themes/text_style.dart';
+import '../../../../config/themes/app_theme.dart';
 import '../../../extensions/context_extension.dart';
 
 class OtpInputField extends StatelessWidget {
@@ -16,9 +16,8 @@ class OtpInputField extends StatelessWidget {
     return Pinput(
       cursor: Text(
         '|',
-        style: getRegularStyle(
+        style: TextStyles.regular16W400(context).copyWith(
           color: context.colorScheme.onSurface,
-          fontSize: 21,
         ),
       ),
       onChanged: onChanged,
@@ -38,8 +37,7 @@ class OtpInputField extends StatelessWidget {
   PinTheme get defaultPinTheme {
     final context = RouteManager.navigatorKey.currentContext!;
     return PinTheme(
-      textStyle: getMediumStyle(
-        fontSize: 21,
+      textStyle: TextStyles.medium16W500(context).copyWith(
         color: context.colorScheme.onSurface,
       ),
       width: 60.w,

@@ -2,8 +2,8 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../config/themes/app_theme.dart';
 import '../../../../../config/themes/assets_manager.dart';
-import '../../../../../config/themes/text_style.dart';
 import '../../../../extensions/context_extension.dart';
 import '../../custom_svg_picture.dart';
 
@@ -26,24 +26,22 @@ class PhoneFieldPrefix extends StatelessWidget {
           borderRadius: BorderRadius.circular(2.r),
         ),
         hintText: context.tr.search,
-        hintStyle: getRegularStyle(
+        hintStyle: TextStyles.regular12W400(context).copyWith(
           color: context.colorScheme.secondary,
-          fontSize: 12,
         ),
       ),
       flagWidth: 30.w,
       flagDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(context.isTablet ? 10.r : 5.r),
       ),
-      dialogTextStyle: getRegularStyle(
-        color: context.colorScheme.secondary,
-        fontSize: context.isTablet ? 12 : 14,
-      ),
-      dialogSize: Size(0.8.sw, 0.6.sh),
-      searchStyle: getRegularStyle(
+      dialogTextStyle: TextStyles.regular12W400(context).copyWith(
         color: context.colorScheme.onSurface,
       ),
-      headerTextStyle: getRegularStyle(
+      dialogSize: Size(0.8.sw, 0.6.sh),
+      searchStyle: TextStyles.regular12W400(context).copyWith(
+        color: context.colorScheme.onSurface,
+      ),
+      headerTextStyle: TextStyles.regular12W400(context).copyWith(
         fontSize: context.isTablet ? 14 : 16,
         color: context.colorScheme.secondary,
       ),
@@ -54,9 +52,8 @@ class PhoneFieldPrefix extends StatelessWidget {
       ),
 
       // Other properties
-      textStyle: getRegularStyle(
+      textStyle: TextStyles.regular16W400(context).copyWith(
         color: context.colorScheme.secondary,
-        fontSize: 16,
       ),
       initialSelection: dialCode,
       onChanged: onChanged,
@@ -91,9 +88,8 @@ class PhoneFieldPrefix extends StatelessWidget {
               // Dial code
               Text(
                 country.dialCode!,
-                style: getRegularStyle(
+                style: TextStyles.regular14W400(context).copyWith(
                   color: context.colorScheme.onSurface,
-                  fontSize: context.isTablet ? 12 : 14,
                 ),
               ),
               SizedBox(width: 4.w),

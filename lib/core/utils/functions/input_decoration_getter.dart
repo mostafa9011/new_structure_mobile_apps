@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../config/themes/text_style.dart';
+import '../../../config/themes/app_theme.dart';
 import '../../extensions/context_extension.dart';
 
 mixin InputDecorationGetter {
@@ -23,7 +23,7 @@ mixin InputDecorationGetter {
     return InputDecoration(
       focusColor: context.colorScheme.primary,
       hoverColor: context.colorScheme.primary,
-      errorStyle: getRegularStyle(
+      errorStyle: TextStyles.regular14W400(context).copyWith(
         color: context.colorScheme.error,
       ),
       prefixIcon: prefixIcon == null
@@ -55,8 +55,10 @@ mixin InputDecorationGetter {
             ),
       hintText: hintText ?? labelText ?? '',
       labelText: enableLableTextWidget ? null : labelText,
-      labelStyle: getMediumStyle(color: context.colorScheme.primary),
-      hintStyle: getRegularStyle(
+      labelStyle: TextStyles.medium16W500(context).copyWith(
+        color: context.colorScheme.primary,
+      ),
+      hintStyle: TextStyles.regular14W400(context).copyWith(
         fontSize: 13,
         color: context.colorScheme.onSecondary,
       ),

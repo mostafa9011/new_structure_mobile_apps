@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/themes/text_style.dart';
+import '../../../../../config/themes/app_theme.dart';
 import '../../../../extensions/context_extension.dart';
 import 'default_prefex_icon.dart';
 import 'required_label.dart';
@@ -109,7 +109,7 @@ class CustomTextFormField extends StatelessWidget {
             focusedErrorBorder: hasBorder == true ? null : InputBorder.none,
           ),
           buildCounter: _buildCounter,
-          style: getRegularStyle(
+          style: TextStyles.regular14W400(context).copyWith(
             fontSize: context.isTablet ? 18 : 14,
             color: theme.colorScheme.onSurface,
           ),

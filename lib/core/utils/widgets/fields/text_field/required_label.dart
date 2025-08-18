@@ -1,6 +1,6 @@
 import 'package:flutter/Material.dart';
 
-import '../../../../../config/themes/text_style.dart';
+import '../../../../../config/themes/app_theme.dart';
 
 class RequiredLabel extends StatelessWidget {
   const RequiredLabel({
@@ -25,18 +25,16 @@ class RequiredLabel extends StatelessWidget {
             Text(
               "$labelText :",
               style: labelStyle ??
-                  getBoldStyle(
+                  TextStyles.bold20W700(context).copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
-                    fontSize: 16,
                   ),
             ),
             if (isRequired) ...[
               const SizedBox(width: 4),
               Text(
                 '*',
-                style: getBoldStyle(
+                style: TextStyles.bold16W700(context).copyWith(
                   color: Theme.of(context).colorScheme.error,
-                  fontSize: 16,
                 ),
               ),
             ],

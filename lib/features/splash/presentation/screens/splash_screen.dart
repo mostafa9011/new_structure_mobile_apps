@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:new_structure/config/config_cubit/config_cubit.dart';
-import 'package:new_structure/config/routes/route_manager.dart';
-import 'package:new_structure/config/themes/text_style.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
+
+import '../../../../config/config_cubit/config_cubit.dart';
+import '../../../../config/routes/route_manager.dart';
+import '../../../../config/themes/app_theme.dart';
+import '../../../../core/extensions/context_extension.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -22,8 +23,7 @@ class SplashScreen extends StatelessWidget {
                 },
                 child: Text(
                   RouteManager.currentContext.tr.changeLanguage,
-                  style: getSemiBoldStyle(
-                    fontSize: 15,
+                  style: TextStyles.medium16W500(context).copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
@@ -36,8 +36,7 @@ class SplashScreen extends StatelessWidget {
                 },
                 child: Text(
                   context.tr.changeTheme,
-                  style: getSemiBoldStyle(
-                    fontSize: 15,
+                  style: TextStyles.medium16W500(context).copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),

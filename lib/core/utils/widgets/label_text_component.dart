@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
 
-import '../../../config/themes/text_style.dart';
+import '../../../config/themes/app_theme.dart';
+import '../../extensions/context_extension.dart';
 
 class LabelTextComponent extends StatelessWidget {
   final String? labelText;
   final bool isRequired;
-  const LabelTextComponent(
-      {super.key, this.labelText, required this.isRequired});
+  const LabelTextComponent({
+    required this.isRequired,
+    super.key,
+    this.labelText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +21,14 @@ class LabelTextComponent extends StatelessWidget {
       child: Text.rich(
         TextSpan(
           text: "$labelText : ",
-          style: getMediumStyle(
-            fontSize: 16,
+          style: TextStyles.medium16W500(context).copyWith(
             color: context.colorScheme.onSurface,
           ),
           children: [
             if (isRequired)
               TextSpan(
                 text: '*',
-                style: getMediumStyle(
-                  fontSize: 16,
+                style: TextStyles.medium16W500(context).copyWith(
                   color: context.colorScheme.error,
                 ),
               ),

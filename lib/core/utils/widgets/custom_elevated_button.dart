@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../config/themes/text_style.dart';
+import '../../../config/themes/app_theme.dart';
 import '../../extensions/context_extension.dart';
 import 'spinket_loader.dart';
 
@@ -68,7 +68,7 @@ class CustomElevatedButton extends StatelessWidget {
         child: Text(
           text,
           style: style ??
-              getBoldStyle(
+              TextStyles.bold20W700(context).copyWith(
                 fontSize: context.isTablet ? 8.sp : size.sp,
                 color: textColor,
               ),

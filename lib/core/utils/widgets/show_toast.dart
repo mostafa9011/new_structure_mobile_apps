@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../config/routes/route_manager.dart';
-import '../../../config/themes/text_style.dart';
+import '../../../config/themes/app_theme.dart';
 import '../../extensions/context_extension.dart';
 
 enum ToastType { success, error, warning }
@@ -138,10 +138,12 @@ class _ToastWidgetState extends State<_ToastWidget>
                 Expanded(
                   child: Text(
                     widget.message,
-                    style: getMediumStyle(
+                    style: TextStyles.medium16W500(context).copyWith(
                       color: widget.type == ToastType.success
                           ? context.colorScheme.tertiary
-                          : context.colorScheme.error,
+                          : widget.type == ToastType.error
+                              ? context.colorScheme.error
+                              : context.colorScheme.onTertiary,
                     ),
                   ),
                 ),

@@ -9,7 +9,7 @@ import 'config/routes/page_name.dart';
 import 'config/routes/route_manager.dart';
 import 'config/themes/color_manager.dart';
 import 'core/utils/dependency_injection/di.dart';
-import 'core/utils/responsive.dart';
+import 'core/utils/size_manager.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
               builder: (context, state) {
                 return LayoutBuilder(
                   builder: (context, constraints) {
-                    Responsive.setTablet(constraints.maxWidth > 600);
-
+                    SizeManager.updateInfo(context);
                     return MaterialApp(
                       localizationsDelegates: const [
                         AppLocalizations.delegate,
