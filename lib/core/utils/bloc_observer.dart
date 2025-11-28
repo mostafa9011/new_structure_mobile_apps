@@ -17,8 +17,8 @@ class MyBlocObserver extends BlocObserver {
       try {
         print(
           '\nonChange -- ${bloc.runtimeType}:\n'
-          'Current state: ${change.currentState.status}\n'
-          'Next state: ${change.nextState.status}\n\n',
+          'Current state: ${change.currentState}\n'
+          'Next state: ${change.nextState}\n\n',
         );
       } catch (_) {
         // If error occurs this means this cubit' state class does not follow the new structure

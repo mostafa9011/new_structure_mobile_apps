@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/config/config_cubit/config_cubit.dart';
@@ -31,6 +32,11 @@ class MyApp extends StatelessWidget {
                     SizeManager.updateInfo(context);
 
                     return MaterialApp(
+                      localizationsDelegates: const [
+                        GlobalMaterialLocalizations.delegate,
+                        GlobalWidgetsLocalizations.delegate,
+                        GlobalCupertinoLocalizations.delegate,
+                      ],
                       locale: TranslationProvider.of(context).flutterLocale,
                       supportedLocales: AppLocaleUtils.supportedLocales,
                       debugShowCheckedModeBanner: false,

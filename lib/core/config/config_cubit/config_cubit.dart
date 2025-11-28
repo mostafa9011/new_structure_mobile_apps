@@ -1,6 +1,7 @@
 import 'package:flutter/Material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../i18n/strings.g.dart';
 import '../../helpers/cache_helper.dart';
 import '../../utils/keys_manager.dart';
 
@@ -16,10 +17,6 @@ class ConfigCubit extends Cubit<ConfigState> {
           ? ThemeMode.light
           : ThemeMode.dark;
 
-  // locale
-  static Locale? locale =
-      Locale(CacheHelper.getStringData(KeysManager.locale) ?? 'en');
-
   // toggle theme
   void toggleTheme() {
     themeMode = themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
@@ -32,9 +29,20 @@ class ConfigCubit extends Cubit<ConfigState> {
 
   // toggle language
   void toggleLanguage() {
-    locale =
-        locale == const Locale('en') ? const Locale('ar') : const Locale('en');
-    CacheHelper.set(key: KeysManager.locale, value: locale?.languageCode);
+    // Determine next locale
+    final nextLocale = LocaleSettings.currentLocale == AppLocale.ar
+        ? AppLocale.en
+        : AppLocale.ar;
+
+    // Update slang locale
+    LocaleSettings.setLocale(nextLocale);
+
+    // Save locale code in cache
+    CacheHelper.set(
+      key: KeysManager.locale,
+      value: nextLocale.languageCode, // "ar" أو "en"
+    );
+
     emit(LanguageToggledState());
   }
 }
