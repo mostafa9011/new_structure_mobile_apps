@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_file_dialog/flutter_file_dialog.dart';
 import 'package:path/path.dart' as path;
 
+import '../../../i18n/strings.g.dart';
 import '../../api/dio_factory.dart';
-import '../../extensions/context_extension.dart';
 import '../widgets/show_toast.dart';
 import 'kprint.dart';
 
@@ -40,7 +40,7 @@ Future<void> downloadAndSaveFile({
       showToast(
         context: context,
         type: ToastType.success,
-        message: context.tr.success,
+        message: t.success,
       );
     }
   }

@@ -1,6 +1,4 @@
-import 'package:new_structure/config/routes/route_manager.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import '../../../i18n/strings.g.dart';
 import '../error_handler_service.dart';
 import '../failures.dart';
 import 'api_response_codes.dart';
@@ -10,7 +8,7 @@ class ConnectionTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.connectTimeout,
-      message: AppLocalizations.of(RouteManager.currentContext)!.connectTimeout,
+      message: t.connectTimeout,
     );
   }
 }
@@ -20,7 +18,7 @@ class SendTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.sendTimeout,
-      message: AppLocalizations.of(RouteManager.currentContext)!.sendTimeout,
+      message: t.sendTimeout,
     );
   }
 }
@@ -30,7 +28,7 @@ class ReceiveTimeOutErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.receiveTimeout,
-      message: AppLocalizations.of(RouteManager.currentContext)!.receiveTimeout,
+      message: t.receiveTimeout,
     );
   }
 }
@@ -40,7 +38,7 @@ class CancelErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.cancel,
-      message: AppLocalizations.of(RouteManager.currentContext)!.cancelMessage,
+      message: t.cancelMessage,
     );
   }
 }
@@ -50,7 +48,7 @@ class BadCertificateErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.badRequest,
-      message: AppLocalizations.of(RouteManager.currentContext)!.badRequest,
+      message: t.badRequest,
     );
   }
 }
@@ -60,7 +58,7 @@ class UnknownErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     return ServerFailure(
       statusCode: APIResponseCodes.unknown,
-      message: AppLocalizations.of(RouteManager.currentContext)!.unknown,
+      message: t.unknown,
     );
   }
 }

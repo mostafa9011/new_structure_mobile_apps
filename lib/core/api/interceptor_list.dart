@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-import '../../config/routes/page_name.dart';
-import '../../config/routes/route_manager.dart';
+import '../config/routes/page_name.dart';
+import '../config/routes/route_manager.dart';
 import '../errors/api/api_response_codes.dart';
 import '../helpers/cache_helper.dart';
 import '../utils/functions/kprint.dart';

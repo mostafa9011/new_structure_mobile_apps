@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../features/splash/presentation/screens/splash_screen.dart';
+import '../../../features/splash/presentation/screens/splash_screen.dart';
 import 'page_name.dart';
 
 class RouteManager {

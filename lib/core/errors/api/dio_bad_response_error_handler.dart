@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import '../../../config/routes/route_manager.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../i18n/strings.g.dart';
 import '../error_handler_service.dart';
 import '../failures.dart';
 import 'api_response_codes.dart';
@@ -10,14 +10,13 @@ class BadResponseErrorHandler implements ErrorHandlerService {
   Failure handle(Exception exception) {
     final response = (exception as DioException).response?.data;
     final int? statusCode = response["code"];
-    final String statusMessage = response["message"] ??
-        AppLocalizations.of(RouteManager.currentContext)!.unknown;
+    final String statusMessage = response["message"] ?? t.unknown;
     // final Map<String, dynamic>? data = response["data"];
 
     // if there is no response
     if (statusCode == null) {
       return ServerFailure(
-        message: AppLocalizations.of(RouteManager.currentContext)!.unknown,
+        message: t.unknown,
         statusCode: APIResponseCodes.unknown,
       );
     }
@@ -33,7 +32,7 @@ class BadResponseErrorHandler implements ErrorHandlerService {
       case APIResponseCodes.unprocessableEntity:
         return ServerFailure(
           statusCode: APIResponseCodes.unprocessableEntity,
-          message: AppLocalizations.of(RouteManager.currentContext)!.unknown,
+          message: t.unknown,
         );
 
       case APIResponseCodes.unauthorized:

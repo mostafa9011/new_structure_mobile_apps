@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/themes/app_theme.dart';
+import '../../../../config/themes/app_theme.dart';
+import '../../../../../i18n/strings.g.dart';
 import '../../../../extensions/context_extension.dart';
 import 'default_prefex_icon.dart';
 import 'required_label.dart';
@@ -172,7 +173,7 @@ class CustomTextFormField extends StatelessWidget {
 
     // Check if the field is required and empty
     else if (isRequired && (value == null || value.trim().isEmpty)) {
-      return capitalizeWords(context.tr.fieldRequired);
+      return capitalizeWords(t.fieldRequired);
     }
 
     return null;

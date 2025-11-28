@@ -127,5 +127,6 @@
     "enterOldPasswordHint": "ادخل كلمة المرور القديمة",
     "enterNewPasswordHint": "ادخل كلمة المرور الجديدة",
     "enterConfirmPasswordHint": "ادخل تاءكيد كلمة المرور",
-    "passwordRequired": "كلمة المرور مطلوبة"
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "play": "يلعب"
 }

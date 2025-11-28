@@ -1,15 +1,13 @@
 import 'package:flutter/Material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../core/helpers/cache_helper.dart';
-import '../../core/utils/keys_manager.dart';
+import '../../helpers/cache_helper.dart';
+import '../../utils/keys_manager.dart';
 
 part 'config_state.dart';
 
 class ConfigCubit extends Cubit<ConfigState> {
   ConfigCubit() : super(ConfigInitial());
-
-  static ConfigCubit of(context) => BlocProvider.of<ConfigCubit>(context);
 
   // theme mode
   static ThemeMode themeMode =

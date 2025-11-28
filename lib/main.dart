@@ -6,10 +6,15 @@ import 'core/helpers/cache_helper.dart';
 import 'core/helpers/flutter_secure_storge_helper.dart';
 import 'core/utils/bloc_observer.dart';
 import 'core/utils/dependency_injection/di.dart';
+import 'i18n/strings.g.dart';
 import 'my_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize slang
+  LocaleSettings.useDeviceLocale();
+
   await initDependencies();
   await CacheHelper.init();
   await FlutterSecureStorageHelper.init();
@@ -17,6 +22,8 @@ void main() async {
   Bloc.observer = MyBlocObserver();
 
   runApp(
-    const MyApp(),
+    TranslationProvider(
+      child: const MyApp(),
+    ),
   );
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../extensions/context_extension.dart';
+import '../../../../../i18n/strings.g.dart';
 import '../../../phone_number.dart';
 import '../text_field/custom_text_form_field.dart';
 import 'phone_field_prefix.dart';
@@ -45,9 +45,9 @@ class _PhoneFieldState extends State<PhoneField> {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       errorText: widget.errorText,
-      labelText: context.tr.phoneNumber,
+      labelText: t.phoneNumber,
       enabled: widget.enabled,
-      hintText: context.tr.phoneNumberHint,
+      hintText: t.phoneNumberHint,
       isRequired: widget.isRequired,
       controller: _textController,
       // prefixIconPath: AssetsManager.call,
@@ -80,10 +80,10 @@ class _PhoneFieldState extends State<PhoneField> {
 
   String? _validator(String value) {
     if (widget.isRequired && value.isEmpty) {
-      return context.tr.phoneRequired;
+      return t.phoneRequired;
     }
     if (_textController.text.length != _phoneNumber.numberLength) {
-      return context.tr.invalidPhoneNumber;
+      return t.invalidPhoneNumber;
     }
 
     return null;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../config/config_cubit/config_cubit.dart';
-import '../../../../config/routes/route_manager.dart';
-import '../../../../config/themes/app_theme.dart';
-import '../../../../core/extensions/context_extension.dart';
+import '../../../../core/config/config_cubit/config_cubit.dart';
+import '../../../../core/config/themes/app_theme.dart';
+import '../../../../i18n/strings.g.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -19,10 +19,10 @@ class SplashScreen extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   // change language
-                  ConfigCubit.of(context).toggleLanguage();
+                  context.read<ConfigCubit>().toggleLanguage();
                 },
                 child: Text(
-                  RouteManager.currentContext.tr.changeLanguage,
+                  t.changeLanguage,
                   style: TextStyles.medium16W500(context).copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
@@ -32,10 +32,10 @@ class SplashScreen extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   // change theme
-                  ConfigCubit.of(context).toggleTheme();
+                  context.read<ConfigCubit>().toggleTheme();
                 },
                 child: Text(
-                  context.tr.changeTheme,
+                  t.changeTheme,
                   style: TextStyles.medium16W500(context).copyWith(
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),

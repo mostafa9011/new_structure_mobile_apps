@@ -2,8 +2,9 @@ import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../config/themes/app_theme.dart';
-import '../../../../../config/themes/assets_manager.dart';
+import '../../../../config/themes/app_theme.dart';
+import '../../../../config/themes/assets_manager.dart';
+import '../../../../../i18n/strings.g.dart';
 import '../../../../extensions/context_extension.dart';
 import '../../custom_svg_picture.dart';
 
@@ -25,7 +26,7 @@ class PhoneFieldPrefix extends StatelessWidget {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(2.r),
         ),
-        hintText: context.tr.search,
+        hintText: t.search,
         hintStyle: TextStyles.regular12W400(context).copyWith(
           color: context.colorScheme.secondary,
         ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
-import '../../../../config/routes/route_manager.dart';
-import '../../../../config/themes/app_theme.dart';
+import '../../../config/routes/route_manager.dart';
+import '../../../config/themes/app_theme.dart';
+import '../../../../i18n/strings.g.dart';
 import '../../../extensions/context_extension.dart';
 
 class OtpInputField extends StatelessWidget {
@@ -27,7 +28,7 @@ class OtpInputField extends StatelessWidget {
       defaultPinTheme: defaultPinTheme,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return context.tr.fieldRequired;
+          return t.fieldRequired;
         }
         return null;
       },

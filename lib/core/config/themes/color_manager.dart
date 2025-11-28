@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_structure/config/themes/color_shades.dart';
+import 'package:new_structure/core/config/themes/color_shades.dart';
 part 'dark_theme.dart';
 part 'light_theme.dart';
 

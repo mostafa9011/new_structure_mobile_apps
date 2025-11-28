@@ -3,8 +3,8 @@ library app_theme;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/extensions/context_extension.dart';
-import '../../core/utils/size_manager.dart';
+import '../../extensions/context_extension.dart';
+import '../../utils/size_manager.dart';
 
 part 'text_styles.dart';
 

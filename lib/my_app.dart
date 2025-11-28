@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'config/config_cubit/config_cubit.dart';
-import 'config/routes/page_name.dart';
-import 'config/routes/route_manager.dart';
-import 'config/themes/color_manager.dart';
+import 'core/config/config_cubit/config_cubit.dart';
+import 'core/config/routes/page_name.dart';
+import 'core/config/routes/route_manager.dart';
+import 'core/config/themes/color_manager.dart';
 import 'core/utils/dependency_injection/di.dart';
 import 'core/utils/size_manager.dart';
+import 'i18n/strings.g.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<ConfigCubit>(),
+      create: (context) => getIt<ConfigCubit>(),
       child: Builder(
         builder: (context) {
           return ScreenUtilInit(
@@ -28,16 +27,12 @@ class MyApp extends StatelessWidget {
               builder: (context, state) {
                 return LayoutBuilder(
                   builder: (context, constraints) {
+                    // update size manager
                     SizeManager.updateInfo(context);
+
                     return MaterialApp(
-                      localizationsDelegates: const [
-                        AppLocalizations.delegate,
-                        GlobalMaterialLocalizations.delegate,
-                        GlobalWidgetsLocalizations.delegate,
-                        GlobalCupertinoLocalizations.delegate,
-                      ],
-                      supportedLocales: AppLocalizations.supportedLocales,
-                      locale: ConfigCubit.locale,
+                      locale: TranslationProvider.of(context).flutterLocale,
+                      supportedLocales: AppLocaleUtils.supportedLocales,
                       debugShowCheckedModeBanner: false,
                       theme: lightTheme,
                       darkTheme: darkTheme,

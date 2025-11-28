@@ -7,7 +7,7 @@ class CacheHelper {
   static late SharedPreferences sharedPreferences;
 
   static Future init() async {
-    sharedPreferences = sl<SharedPreferences>();
+    sharedPreferences = getIt<SharedPreferences>();
   }
 
   // This fun to put data in local data base using key

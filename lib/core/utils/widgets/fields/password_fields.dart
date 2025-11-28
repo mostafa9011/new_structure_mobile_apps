@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../i18n/strings.g.dart';
 import '../../../extensions/context_extension.dart';
 import 'text_field/custom_text_form_field.dart';
 
@@ -61,8 +62,8 @@ class _PasswordFieldsState extends State<PasswordFields> {
         if (widget.oldPasswordController != null) ...{
           PasswordField(
             errorText: widget.errorText,
-            labelText: context.tr.oldPassword,
-            hintText: context.tr.enterOldPasswordHint,
+            labelText: t.oldPassword,
+            hintText: t.enterOldPasswordHint,
             controller: widget.oldPasswordController,
             obscureText: obscureOldPassword,
             onSuffixPressed: () {
@@ -78,8 +79,8 @@ class _PasswordFieldsState extends State<PasswordFields> {
 
         // Password
         PasswordField(
-          labelText: widget.passwordTitle ?? context.tr.password,
-          hintText: widget.passwordHint ?? context.tr.enterPasswordPlaceholder,
+          labelText: widget.passwordTitle ?? t.password,
+          hintText: widget.passwordHint ?? t.enterPasswordPlaceholder,
           controller: widget.passwordController,
           onSuffixPressed: () {
             setState(() => obscurePassword = !obscurePassword);
@@ -95,8 +96,8 @@ class _PasswordFieldsState extends State<PasswordFields> {
         if (widget.confirmPasswordController != null) ...[
           SizedBox(height: widget.separatorHeight.h),
           PasswordField(
-            labelText: context.tr.confirmPassword,
-            hintText: context.tr.enterConfirmPasswordHint,
+            labelText: t.confirmPassword,
+            hintText: t.enterConfirmPasswordHint,
             controller: widget.confirmPasswordController,
             onSuffixPressed: () {
               setState(() {
@@ -110,7 +111,7 @@ class _PasswordFieldsState extends State<PasswordFields> {
             },
             validator: (value) {
               if (widget.passwordController.text != value) {
-                return context.tr.passwordNotMatch;
+                return t.passwordNotMatch;
               }
               return null;
             },
@@ -171,10 +172,10 @@ class PasswordField extends StatelessWidget {
       validator: (value) {
         // If the field is empty and validation is required
         if (value.isEmpty) {
-          return '${context.tr.passwordRequired}';
+          return '${t.passwordRequired}';
         } 
         // else if (value.length < 8) {
-        //   return context.tr.passwordLengthError;
+        //   return t.passwordLengthError;
         // }
         return validator?.call(value);
       },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../config/themes/app_theme.dart';
+import '../../config/themes/app_theme.dart';
 import '../../extensions/context_extension.dart';
 import 'spinket_loader.dart';
 

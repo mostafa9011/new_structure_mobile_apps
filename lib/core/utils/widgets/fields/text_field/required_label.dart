@@ -1,6 +1,6 @@
 import 'package:flutter/Material.dart';
 
-import '../../../../../config/themes/app_theme.dart';
+import '../../../../config/themes/app_theme.dart';
 
 class RequiredLabel extends StatelessWidget {
   const RequiredLabel({
