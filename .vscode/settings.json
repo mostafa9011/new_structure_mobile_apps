@@ -2,5 +2,6 @@
     "pieces.cloudCapabilities": "Blended",
     "pieces.telemetry": true,
     "workbench.editor.pinnedTabsOnSeparateRow": true,
-    "flutter-intl.showMetadataWarning": false
+    "flutter-intl.showMetadataWarning": false,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
