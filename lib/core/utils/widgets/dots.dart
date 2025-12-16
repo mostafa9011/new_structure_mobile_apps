@@ -1,13 +1,13 @@
-import 'package:flutter/Material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:new_structure/core/extensions/context_extension.dart';
+import '../../extensions/context_extension.dart';
 
 
 class Dots extends StatelessWidget {
   final int numberOfDots;
   final int currentIndex;
   const Dots(
-      {super.key, required this.numberOfDots, required this.currentIndex});
+      {required this.numberOfDots, required this.currentIndex, super.key,});
 
   @override
   Widget build(BuildContext context) {
